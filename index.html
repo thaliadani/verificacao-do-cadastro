@@ -7,12 +7,18 @@
     <style>
         *{
             background-color: #f7ede1;
+            font-family: Arial, Helvetica, sans-serif;
         }
         h2{
             text-align: center;
+            text-shadow: #000000 ;
         }
-        .pass { color: green; }
-        .fail { color: red; }
+        #resultados{
+            border: #000 solid .3rem;
+            padding-left: 1rem;
+        }
+        .pass { color: #189718; }
+        .fail { color: #ff0000; }
     </style>
 </head>
 <body>
@@ -62,14 +68,13 @@
             // validarNome escrito com n minusculo
             teste('O nome "Li" é inválido (menos de 3 caracteres)', validarNome('Li') === false);
         
-        
             // Testes de idade
             teste('A idade 25 é válida', validarIdade(25) === true);
             teste('A idade 15 é inválida (menor de 18 anos)', validarIdade(15) === false);
             teste('A idade 130 é inválida (maior que 120 anos)', validarIdade(130) === false);
         }
         catch (erro) {
-            exibirResultado('Erro inesperado: ' + erro.messagem, false);
+            exibirResultado('Erro inesperado: ' + erro.mensagem, false);
         }
     </script>
 </body>
